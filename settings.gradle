@@ -1,3 +1,4 @@
 include ':app'
+include ':extensions'
 include ':resource'
 rootProject.name = "cat and dog searcher"

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_message_snackbar">An error has occurred</string>
+    <string name="without_internet_message_snackbar">You are without internet</string>
+    <string name="with_internet_message_snackbar">Your internet returned</string>
+</resources>
