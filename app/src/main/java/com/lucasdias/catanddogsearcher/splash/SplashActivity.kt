@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.lucasdias.base.presentation.BaseActivity
 import com.lucasdias.catanddogsearcher.R
 
 class SplashActivity : AppCompatActivity() {
@@ -26,6 +27,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun startNextViewWithDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
+            BaseActivity.launch(this, R.navigation.navigation_animal)
         }, DELAY_TIME)
     }
 

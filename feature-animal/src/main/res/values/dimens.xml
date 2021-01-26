@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Search Animal Fragment  -->
+    <dimen name="margin_top_logo_view_search_animal_fragment">60dp</dimen>
+    <dimen name="margin_bottom_search_text_input_search_animal_fragment">48dp</dimen>
+    <dimen name="margin_bottom_button_search_animal_fragment">16dp</dimen>
+</resources>

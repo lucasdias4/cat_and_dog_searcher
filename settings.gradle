@@ -4,6 +4,7 @@ include ':core'
 include ':data'
 include ':domain'
 include ':extensions'
+include ':feature-animal'
 include ':resource'
 include ':ui-component'
 rootProject.name = "cat and dog searcher"

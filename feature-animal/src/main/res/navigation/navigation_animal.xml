@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_family_history"
+    app:startDestination="@id/search_animal_fragment">
+
+    <fragment
+        android:id="@+id/search_animal_fragment"
+        android:name="com.lucasdias.feature_animal.search.SearchAnimalFragment">
+
+        <action
+            android:id="@+id/navigate_to_animal_list"
+            app:destination="@id/animal_list_fragment"
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_pop_enter"
+            app:popExitAnim="@anim/fragment_pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/animal_list_fragment"
+        android:name="com.lucasdias.feature_animal.list.AnimalListFragment">
+
+        <argument
+            android:name="search_text"
+            app:argType="string" />
+
+    </fragment>
+</navigation>

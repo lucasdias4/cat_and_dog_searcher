@@ -36,7 +36,12 @@ android {
 }
 
 dependencies {
-    implementation project(Dependencies.Module.resource)
+    implementation project(Dependencies.Module.base)
+    implementation project(Dependencies.Module.core)
+    implementation project(Dependencies.Module.data)
+    implementation project(Dependencies.Module.domain)
+    implementation project(Dependencies.Module.extensions)
+    implementation project(Dependencies.Module.feature_animal)
     implementation project(Dependencies.Module.ui_component)
 
     implementation Dependencies.Core.kotlin_stdlib

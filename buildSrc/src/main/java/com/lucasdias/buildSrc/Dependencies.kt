@@ -66,6 +66,8 @@ object Dependencies {
 
         const val domain = ":domain"
 
+        const val feature_animal = ":feature-animal"
+
         const val resource = ":resource"
 
         const val ui_component = ":ui-component"
