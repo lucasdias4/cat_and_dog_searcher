@@ -54,15 +54,11 @@ object Dependencies {
     }
 
     object Module {
-        const val authorization = ":feature-authorization"
-
         const val app = ":app"
 
         const val base = ":base"
 
         const val core = ":core"
-
-        const val comic = ":feature-comic"
 
         const val extensions = ":extensions"
 
