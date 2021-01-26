@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_card_component"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/layout_height_card_component">
+
+    <ImageView
+        android:id="@+id/image_card_component"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mine_shaft"
+        android:contentDescription="@string/image_content_description_card_component"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/information_card_view_card_component"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/title_card_view_margin_start_card_component"
+        android:layout_marginEnd="@dimen/title_card_view_margin_end_card_component"
+        android:elevation="@dimen/title_card_view_elevation_card_component"
+        android:translationY="@dimen/title_card_view_translation_y_card_component"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/title_layout_card_component"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/background_secondary"
+            android:orientation="vertical"
+            android:padding="@dimen/title_layout_padding_card_component">
+
+            <TextView
+                android:id="@+id/title_card_component"
+                style="@style/U1_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="@dimen/title_text_view_max_width_card_component"
+                android:maxLines="1"
+                android:textColor="@color/text_secondary"
+                tools:text="Comic title" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

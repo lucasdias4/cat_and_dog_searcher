@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonComponent" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAppearance">@style/U2_bold</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+</resources>

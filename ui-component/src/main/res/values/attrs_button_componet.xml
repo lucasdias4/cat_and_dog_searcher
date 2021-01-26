@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonComponent">
+        <attr name="buttonSizeType" format="enum">
+            <enum name="large" value="0" />
+            <enum name="small" value="1" />
+        </attr>
+
+        <attr name="buttonColorType" format="enum">
+            <enum name="primary" value="0"/>
+            <enum name="secondary" value="1"/>
+        </attr>
+
+        <attr name="buttonCornerType" format="enum">
+            <enum name="softRound" value="0" />
+            <enum name="sharp" value="1" />
+        </attr>
+
+        <attr name="buttonText" format="string|reference" />
+    </declare-styleable>
+</resources>
