@@ -26,7 +26,6 @@ class SplashActivity : AppCompatActivity() {
 
     private fun startNextViewWithDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
-
         }, DELAY_TIME)
     }
 

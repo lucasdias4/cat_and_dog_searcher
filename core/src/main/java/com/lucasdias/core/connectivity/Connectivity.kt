@@ -15,7 +15,7 @@ class Connectivity(context: Context) {
         registerNetworkCallback(connectivityManager = getConnectivityManager(context))
     }
 
-    fun getLiveData() : SingleLiveEvent<Boolean> = _liveData
+    fun getLiveData(): SingleLiveEvent<Boolean> = _liveData
 
     private fun getConnectivityManager(context: Context): ConnectivityManager {
         return context.getSystemService(Context.CONNECTIVITY_SERVICE)
