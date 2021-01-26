@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="U2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="U2_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="U1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="U1_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="P6" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P5" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P4" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P3" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+    </style>
+    <style name="P6_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="P5_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="P4_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="P3_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="P2_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="P1_bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sans_pro</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="H3" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.5</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="H2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="H1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="D3" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.05</item>
+    </style>
+    <style name="D2" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">56sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+    <style name="D1" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">72sp</item>
+        <item name="android:lineSpacingExtra">0sp</item>
+        <item name="android:letterSpacing">-0.06</item>
+    </style>
+</resources>
