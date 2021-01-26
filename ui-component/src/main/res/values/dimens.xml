@@ -13,7 +13,7 @@
     <dimen name="title_card_view_margin_end_card_component">32dp</dimen>
     <dimen name="title_card_view_elevation_card_component">4dp</dimen>
     <dimen name="title_card_view_max_height_card_component">200dp</dimen>
-    <dimen name="title_card_view_translation_y_card_component">-18dp</dimen>
+    <dimen name="title_card_view_margin_bottom_card_component">18dp</dimen>
     <dimen name="title_layout_padding_card_component">4dp</dimen>
     <dimen name="title_max_lines_card_component">1</dimen>
     <dimen name="description_max_height_card_component">150dp</dimen>
@@ -29,4 +29,6 @@
     <dimen name="margin_start_title_logo_view">16dp</dimen>
     <dimen name="margin_start_title_middle_logo_view">16dp</dimen>
     <dimen name="margin_bottom_title_middle_logo_view">8dp</dimen>
+    <dimen name="title_card_radius_view_card_component">40dp</dimen>
+    <dimen name="title_padding_horizontal_card_component">12dp</dimen>
 </resources>

@@ -27,7 +27,7 @@ class CardComponent @JvmOverloads constructor(
         layout = findViewById(R.id.layout_card_component)
         image = findViewById(R.id.image_card_component)
         title = findViewById(R.id.title_card_component)
-        informationCard = findViewById(R.id.information_card_view_card_component)
+        informationCard = findViewById(R.id.title_card_view_card_component)
         setupInformationCard()
     }
 
