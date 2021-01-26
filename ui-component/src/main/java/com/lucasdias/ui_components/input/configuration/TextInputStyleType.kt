@@ -17,10 +17,10 @@ enum class TextInputStyleType(
         id = 0,
         backgroundDrawable = R.drawable.normal_input_text_shape,
         errorBackgroundDrawable = R.drawable.error_input_text_shape,
-        textColor = R.color.wild_sand,
-        hintColor = R.color.wild_sand,
+        textColor = R.color.text_first,
+        hintColor = R.color.text_first,
         errorHintColor = R.color.red_pigment,
-        toggleColor = R.color.wild_sand
+        toggleColor = R.color.text_third
     );
 
     companion object {

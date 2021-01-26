@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="text_primary">@color/wild_sand</color>
-    <color name="text_secondary">@color/wild_sand</color>
-    <color name="text_tertiary">@color/bright_red</color>
-    <color name="background_primary">@color/nero</color>
-    <color name="background_secondary">@color/bright_red</color>
-    <color name="background_tertiary">@color/nero</color>
-    <color name="background_quaternary">@color/nero</color>
+    <color name="text_first">@color/wild_sand</color>
+    <color name="text_second">@color/wild_sand</color>
+    <color name="text_third">@color/bilbao</color>
+    <color name="text_fourth">@color/bilbao</color>
+    <color name="text_fifth">@color/bilbao</color>
+
+    <color name="background_first">@color/nero</color>
+    <color name="background_second">@color/nero</color>
+    <color name="background_third">@color/emperor</color>
+    <color name="background_fourth">@color/bilbao</color>
 
     <color name="alto">#CFCFCF</color>
     <color name="bilbao">#177718</color>
     <color name="black">#000000</color>
+    <color name="blond">#faf0be</color>
     <color name="bright_red">#AA0202</color>
     <color name="cerise">#E44B83</color>
     <color name="congress_blue">#01497C</color>

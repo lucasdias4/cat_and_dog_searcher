@@ -11,7 +11,7 @@ enum class ButtonColorType(
 ) {
     PRIMARY(
         id = 0,
-        backgroundColor = R.color.bright_red,
+        backgroundColor = R.color.bilbao,
         textColor = R.color.wild_sand,
         progressBarColor = R.color.wild_sand
     ),

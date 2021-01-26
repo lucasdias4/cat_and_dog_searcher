@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_start_logo_view"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/text_first"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_marginStart="@dimen/margin_start_title_middle_logo_view"
         android:layout_marginBottom="@dimen/margin_bottom_title_middle_logo_view"
         android:text="@string/title_middle_logo_view"
-        android:textColor="@color/text_quaternary"
+        android:textColor="@color/text_third"
         app:layout_constraintBottom_toBottomOf="@id/title_start_logo_view"
         app:layout_constraintStart_toEndOf="@id/title_start_logo_view" />
 
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_start_title_logo_view"
         android:text="@string/title_end_logo_view"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/text_first"
         app:layout_constraintBottom_toBottomOf="@id/title_start_logo_view"
         app:layout_constraintStart_toEndOf="@id/title_middle_logo_view" />
 

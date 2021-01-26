@@ -6,23 +6,35 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.lucasdias.base.presentation.BaseActivity
 import com.lucasdias.catanddogsearcher.R
+import com.lucasdias.catanddogsearcher.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySplashBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupToolbar()
+        setupLogo()
     }
 
     override fun onResume() {
         super.onResume()
 
-        setupToolbar()
         startNextViewWithDelay()
     }
 
     private fun setupToolbar() {
         supportActionBar?.hide()
+    }
+
+    private fun setupLogo() {
+        binding.logoSplashActivity.titleStartLogoView.setTextColor(this.getColor(R.color.text_fourth))
+        binding.logoSplashActivity.titleMiddleLogoView.setTextColor(this.getColor(R.color.text_second))
+        binding.logoSplashActivity.titleEndLogoView.setTextColor(this.getColor(R.color.text_fourth))
     }
 
     private fun startNextViewWithDelay() {
