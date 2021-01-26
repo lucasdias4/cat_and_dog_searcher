@@ -1,0 +1,14 @@
+ext {
+  /*
+* Marvel API
+* */
+  RELEASE_CAT_API_URL = '\"https://api.thecatapi.com/v1\"'
+  RELEASE_DOG_API_URL = '\"https://api.thedogapi.com/v1\"'
+  RELEASE_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
+  RELEASE_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
+
+  DEBUG_CAT_API_URL = '\"https://api.thecatapi.com/v1\"'
+  DEBUG_DOG_API_URL = '\"https://api.thedogapi.com/v1\"'
+  DEBUG_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
+  DEBUG_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
+}

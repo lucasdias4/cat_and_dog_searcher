@@ -1,6 +1,7 @@
 include ':app'
 include ':base'
 include ':core'
+include ':data'
 include ':domain'
 include ':extensions'
 include ':resource'

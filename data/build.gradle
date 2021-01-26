@@ -26,10 +26,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "MARVEL_API_URL", RELEASE_MARVEL_API_URL
+            buildConfigField "String", "CAT_API_URL", RELEASE_CAT_API_URL
+            buildConfigField "String", "DOG_API_URL", RELEASE_DOG_API_URL
         }
         debug {
-            buildConfigField "String", "MARVEL_API_URL", DEBUG_MARVEL_API_URL
+            buildConfigField "String", "CAT_API_URL", DEBUG_CAT_API_URL
+            buildConfigField "String", "DOG_API_URL", DEBUG_DOG_API_URL
         }
     }
 
