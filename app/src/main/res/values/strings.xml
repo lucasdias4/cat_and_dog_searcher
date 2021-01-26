@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">cat and dog searcher</string>
+
+    <!--    Logo view-->
+    <string name="title_start_logo_view">Cat</string>
+    <string name="title_middle_logo_view">and</string>
+    <string name="title_end_logo_view">Dog</string>
 </resources>
