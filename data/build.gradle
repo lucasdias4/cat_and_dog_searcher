@@ -1,0 +1,62 @@
+import com.lucasdias.buildSrc.Dependencies
+import com.lucasdias.buildSrc.Versions
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../information.gradle'
+
+android {
+    compileSdkVersion Versions.compile_sdk
+    buildToolsVersion Versions.build_tools
+
+    defaultConfig {
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "MARVEL_API_URL", RELEASE_MARVEL_API_URL
+        }
+        debug {
+            buildConfigField "String", "MARVEL_API_URL", DEBUG_MARVEL_API_URL
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = Versions.jvm_target_version
+    }
+}
+
+dependencies {
+    implementation project(Dependencies.Module.base)
+    implementation project(Dependencies.Module.core)
+    implementation project(Dependencies.Module.domain)
+
+    implementation Dependencies.Core.kotlin_stdlib
+    implementation Dependencies.Core.core_ktx
+
+    implementation Dependencies.Data.converter_gson
+    implementation Dependencies.Data.logging_interceptor
+    implementation Dependencies.Data.preference
+    implementation Dependencies.Data.retrofit
+
+    implementation Dependencies.DI.koin
+    implementation Dependencies.DI.koin_core
+    implementation Dependencies.DI.koin_view_model
+}
