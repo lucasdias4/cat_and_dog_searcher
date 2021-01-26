@@ -6,4 +6,9 @@
     <!--    Error View Component-->
     <string name="message_text_error_view_component">An error has occurred.</string>
     <string name="retry_button_text_error_view_component">Try again</string>
+
+    <!--    Logo view-->
+    <string name="title_start_logo_view">Cat</string>
+    <string name="title_middle_logo_view">and</string>
+    <string name="title_end_logo_view">Dog</string>
 </resources>

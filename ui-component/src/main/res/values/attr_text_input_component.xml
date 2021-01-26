@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextInputComponent">
+        <attr name="textInputImeType" format="enum">
+            <enum name="done" value="0" />
+            <enum name="go" value="1" />
+            <enum name="next" value="2" />
+            <enum name="search" value="3" />
+            <enum name="send" value="4" />
+        </attr>
+
+        <attr name="textInputStyleType" format="enum">
+            <enum name="normal" value="0"/>
+        </attr>
+
+        <attr name="textInputEntryType" format="enum">
+            <enum name="text" value="0" />
+            <enum name="password" value="1" />
+        </attr>
+
+        <attr name="textInputHint" format="string|reference" />
+    </declare-styleable>
+</resources>

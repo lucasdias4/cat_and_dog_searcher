@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    Logo view-->
-    <dimen name="margin_start_title_logo_view">16dp</dimen>
-    <dimen name="margin_start_title_middle_logo_view">16dp</dimen>
-    <dimen name="margin_bottom_title_middle_logo_view">8dp</dimen>
 </resources>

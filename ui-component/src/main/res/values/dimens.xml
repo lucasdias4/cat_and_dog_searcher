@@ -24,4 +24,9 @@
     <dimen name="image_view_height_error_view_component">100dp</dimen>
     <dimen name="image_margin_bottom_view_error_view_component">16dp</dimen>
     <dimen name="retry_button_margin_bottom_error_view_component">16dp</dimen>
+
+    <!--    Logo view-->
+    <dimen name="margin_start_title_logo_view">16dp</dimen>
+    <dimen name="margin_start_title_middle_logo_view">16dp</dimen>
+    <dimen name="margin_bottom_title_middle_logo_view">8dp</dimen>
 </resources>
