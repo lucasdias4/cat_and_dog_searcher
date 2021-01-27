@@ -11,10 +11,17 @@ sealed class Resource<T> {
         override fun value() = value
         override fun error() = null
     }
+
+    class SuccessWithoutContent<T> : Resource<T>() {
+        override fun value() = null
+        override fun error() = null
+    }
+
     data class Error<T>(val exception: Exception) : Resource<T>() {
         override fun value() = null
         override fun error() = exception
     }
+
     class Loading<T> : Resource<T>() {
         override fun value() = null
         override fun error() = null

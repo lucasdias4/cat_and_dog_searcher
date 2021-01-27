@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.MarvelComics" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme.CatAndDog" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/emperor</item>
         <item name="colorPrimaryVariant">@color/emperor</item>
         <item name="colorOnPrimary">@color/emperor</item>

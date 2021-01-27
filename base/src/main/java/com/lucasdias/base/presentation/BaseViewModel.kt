@@ -56,6 +56,10 @@ abstract class BaseViewModel<T : Any?>(
                 isInitialRequest = false
                 _responseLiveData.postValue(resource)
             }
+            is Resource.SuccessWithoutContent -> {
+                isLoading = false
+                _responseLiveData.postValue(resource)
+            }
             is Resource.Error -> {
                 isLoading = false
                 _responseLiveData.postValue(resource)

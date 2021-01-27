@@ -1,6 +1,6 @@
 ext {
   /*
-* Marvel API
+* Cat and Dog API
 * */
   RELEASE_CAT_API_URL = '\"https://api.thecatapi.com/\"'
   RELEASE_DOG_API_URL = '\"https://api.thedogapi.com/\"'

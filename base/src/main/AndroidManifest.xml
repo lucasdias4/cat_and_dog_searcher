@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
         <activity
-            android:theme="@style/Theme.MarvelComics"
+            android:theme="@style/Theme.CatAndDog"
             android:name=".presentation.BaseActivity"
             android:screenOrientation="portrait" />
     </application>

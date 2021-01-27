@@ -1,6 +1,7 @@
 package com.lucasdias.feature_animal.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
@@ -15,6 +16,7 @@ class AnimalListFragment : Fragment(R.layout.fragment_animal_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.executeRequest()
+        val response = viewModel.executeRequest()
+        Log.i("Search cat", "RESPONSE: $response")
     }
 }

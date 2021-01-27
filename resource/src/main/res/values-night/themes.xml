@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.MarvelComics" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.CatAndDog" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/nero</item>
         <item name="colorPrimaryVariant">@color/nero</item>
         <item name="colorOnPrimary">@color/nero</item>
