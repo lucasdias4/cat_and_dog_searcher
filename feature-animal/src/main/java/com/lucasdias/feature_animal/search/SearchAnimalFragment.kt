@@ -31,8 +31,10 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
 
                 if (searchText.isNotEmpty()) {
                     errorMessageSearchAnimalFragment.animateVisibleToGone()
+                    searchTextInputSearchAnimalFragment.notifySuccess()
                     navigateToAnimalListFragment(searchText)
                 } else {
+                    searchTextInputSearchAnimalFragment.notifyError()
                     errorMessageSearchAnimalFragment.animateGoneToVisible()
                 }
             }

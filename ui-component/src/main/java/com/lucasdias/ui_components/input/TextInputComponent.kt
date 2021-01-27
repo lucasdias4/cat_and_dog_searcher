@@ -45,7 +45,7 @@ class TextInputComponent @JvmOverloads constructor(
     }
 
     fun notifyError() {
-        styleSetup(style.errorBackgroundDrawable, style.errorHintColor, style.toggleColor)
+        styleSetup(style.errorBackgroundDrawable, style.errorHintColor, style.errorToggleColor)
     }
 
     private fun loadAttr(attrs: AttributeSet?, @AttrRes defStyleAttr: Int = 0) {

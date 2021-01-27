@@ -11,7 +11,8 @@ enum class TextInputStyleType(
     @ColorRes val textColor: Int,
     @ColorRes val hintColor: Int,
     @ColorRes val errorHintColor: Int,
-    @ColorRes val toggleColor: Int
+    @ColorRes val toggleColor: Int,
+    @ColorRes val errorToggleColor: Int
 ) {
     NORMAL(
         id = 0,
@@ -20,7 +21,8 @@ enum class TextInputStyleType(
         textColor = R.color.text_first,
         hintColor = R.color.text_first,
         errorHintColor = R.color.red_pigment,
-        toggleColor = R.color.text_third
+        toggleColor = R.color.text_third,
+        errorToggleColor = R.color.bright_red
     );
 
     companion object {
