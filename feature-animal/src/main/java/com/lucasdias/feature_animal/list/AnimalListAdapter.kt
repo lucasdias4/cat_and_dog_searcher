@@ -4,8 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasdias.domain.model.Animal
+import com.lucasdias.feature_animal.R
 import com.lucasdias.feature_animal.databinding.AnimalListItemBinding
 import com.lucasdias.ui_components.card.model.CardComponentProperties
+import com.lucasdias.ui_components.card.model.CardImageProperties
 
 class AnimalListAdapter : RecyclerView.Adapter<AnimalListAdapter.ViewHolder>() {
 
@@ -31,11 +33,12 @@ class AnimalListAdapter : RecyclerView.Adapter<AnimalListAdapter.ViewHolder>() {
 
     class ViewHolder(private val binding: AnimalListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        // TODO: Implement image
         fun bind(animal: Animal) {
             with(animal) {
-                val properties = CardComponentProperties(id, name, null, null)
-                binding.layoutCardComponent.applyProperties(properties)
+                val imageProperties = CardImageProperties(animal.imageUrl, R.drawable.picture_place_holder)
+                val cardProperties = CardComponentProperties(id, name, imageProperties, null)
+
+                binding.layoutCardComponent.applyProperties(cardProperties)
             }
         }
     }
