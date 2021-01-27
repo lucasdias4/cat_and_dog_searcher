@@ -30,12 +30,16 @@ android {
             buildConfigField "String", "DOG_API_URL", RELEASE_DOG_API_URL
             buildConfigField "String", "CAT_API_KEY", RELEASE_CAT_API_KEY
             buildConfigField "String", "DOG_API_KEY", RELEASE_DOG_API_KEY
+            buildConfigField "String", "CAT_IMAGE_URL", RELEASE_CAT_IMAGE_URL
+            buildConfigField "String", "DOG_IMAGE_URL", RELEASE_DOG_IMAGE_URL
         }
         debug {
             buildConfigField "String", "CAT_API_URL", DEBUG_CAT_API_URL
             buildConfigField "String", "DOG_API_URL", DEBUG_DOG_API_URL
             buildConfigField "String", "CAT_API_KEY", DEBUG_CAT_API_KEY
             buildConfigField "String", "DOG_API_KEY", DEBUG_DOG_API_KEY
+            buildConfigField "String", "CAT_IMAGE_URL", DEBUG_CAT_IMAGE_URL
+            buildConfigField "String", "DOG_IMAGE_URL", DEBUG_DOG_IMAGE_URL
         }
     }
 

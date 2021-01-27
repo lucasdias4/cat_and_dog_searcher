@@ -22,7 +22,7 @@
         android:layout_marginBottom="@dimen/margin_bottom_search_text_input_search_animal_fragment"
         app:layout_constraintBottom_toTopOf="@id/button_search_animal_fragment"
         app:textInputEntryType="text"
-        app:textInputHint="animal name"
+        app:textInputHint="animal breed"
         app:textInputImeType="done"
         app:textInputStyleType="normal" />
 
