@@ -1,18 +1,25 @@
 ext {
-  /*
-* Cat and Dog API
-* */
-  RELEASE_CAT_API_URL = '\"https://api.thecatapi.com/\"'
-  RELEASE_DOG_API_URL = '\"https://api.thedogapi.com/\"'
-  RELEASE_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
-  RELEASE_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
-  RELEASE_CAT_IMAGE_URL = '\"https://cdn2.thecatapi.com/images/\"'
-  RELEASE_DOG_IMAGE_URL = '\"https://cdn2.thedogapi.com/images/\"'
+    /*
+  * Cat and Dog API
+  * */
 
-  DEBUG_CAT_API_URL = '\"https://api.thecatapi.com/\"'
-  DEBUG_DOG_API_URL = '\"https://api.thedogapi.com/\"'
-  DEBUG_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
-  DEBUG_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
-  DEBUG_CAT_IMAGE_URL = '\"https://cdn2.thecatapi.com/images/\"'
-  DEBUG_DOG_IMAGE_URL = '\"https://cdn2.thedogapi.com/images/\"'
+    /*
+    The correct thing would be for the API to return the entire image URL and not just
+    the IMAGE_ID. As this does not happen at the chosen end point, I chose to place
+    the base URL inside the application, which may cause a problem in the future
+    if the API changes the URL.
+    */
+    RELEASE_CAT_API_URL = '\"https://api.thecatapi.com/\"'
+    RELEASE_DOG_API_URL = '\"https://api.thedogapi.com/\"'
+    RELEASE_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
+    RELEASE_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
+    RELEASE_CAT_IMAGE_URL = '\"https://cdn2.thecatapi.com/images/\"'
+    RELEASE_DOG_IMAGE_URL = '\"https://cdn2.thedogapi.com/images/\"'
+
+    DEBUG_CAT_API_URL = '\"https://api.thecatapi.com/\"'
+    DEBUG_DOG_API_URL = '\"https://api.thedogapi.com/\"'
+    DEBUG_CAT_API_KEY = '\"b1cc6a99-aed5-43a4-8ac0-838b022ed7b7\"'
+    DEBUG_DOG_API_KEY = '\"a3ee1cc2-3bb9-4a50-bbd9-1bffbf9b3494\"'
+    DEBUG_CAT_IMAGE_URL = '\"https://cdn2.thecatapi.com/images/\"'
+    DEBUG_DOG_IMAGE_URL = '\"https://cdn2.thedogapi.com/images/\"'
 }

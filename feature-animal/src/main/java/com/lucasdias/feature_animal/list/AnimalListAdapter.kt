@@ -9,7 +9,7 @@ import com.lucasdias.feature_animal.databinding.AnimalListItemBinding
 import com.lucasdias.ui_components.card.model.CardComponentProperties
 import com.lucasdias.ui_components.card.model.CardImageProperties
 
-class AnimalListAdapter : RecyclerView.Adapter<AnimalListAdapter.ViewHolder>() {
+class AnimalListAdapter(private val navigateToAnimalDetail: ((Animal) -> Unit)) : RecyclerView.Adapter<AnimalListAdapter.ViewHolder>() {
 
     private val animals = mutableListOf<Animal>()
 

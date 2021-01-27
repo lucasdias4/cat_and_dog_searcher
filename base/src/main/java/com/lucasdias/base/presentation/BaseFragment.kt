@@ -3,6 +3,7 @@ package com.lucasdias.base.presentation
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
@@ -93,6 +94,10 @@ abstract class BaseFragment<T : Any>(
         successView.animateGoneToVisible()
         loadingView.animateVisibleToGone()
         errorView.animateVisibleToGone()
+    }
+
+    open fun onSuccessWithoutContent() {
+        Toast.makeText(requireContext(), "onSuccessWithoutContent", Toast.LENGTH_LONG).show()
     }
 
     open fun onError(throwable: Throwable?) {

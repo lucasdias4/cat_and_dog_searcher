@@ -1,6 +1,8 @@
 package com.lucasdias.feature_animal.di
 
+import com.lucasdias.domain.model.Animal
 import com.lucasdias.domain.usecase.SearchAnimalByNameAndType
+import com.lucasdias.feature_animal.list.AnimalListAdapter
 import com.lucasdias.feature_animal.list.AnimalListViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -14,5 +16,9 @@ val animalModule = module {
             get<SearchAnimalByNameAndType>(),
             get<CoroutineDispatcher>()
         )
+    }
+
+    factory { (navigateToAnimalDetail: ((Animal) -> Unit)) ->
+        AnimalListAdapter(navigateToAnimalDetail)
     }
 }

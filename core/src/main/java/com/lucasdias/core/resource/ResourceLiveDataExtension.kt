@@ -10,9 +10,15 @@ fun <T> LiveData<Resource<T>>.observe(
     owner: LifecycleOwner,
     loading: (() -> Unit),
     success: ((T?) -> Unit),
+    successWithoutContent: (() -> Unit),
     error: ((Throwable?) -> Unit)
 ) {
-    val observer = ResourceObserver<T>(loading = loading, success = success, error = error)
+    val observer = ResourceObserver<T>(
+        loading = loading,
+        success = success,
+        successWithoutContent = successWithoutContent,
+        error = error
+    )
     observe(owner, observer)
 }
 

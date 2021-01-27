@@ -11,7 +11,13 @@ class AnimalListViewModel(
     coroutineContext: CoroutineDispatcher
 ) : BaseViewModel<List<Animal>>(coroutineContext) {
 
+    private var searchText = ""
+
     override suspend fun request(): Resource<List<Animal>> {
-        return searchAnimalByNameAndType("American")
+        return searchAnimalByNameAndType(searchText)
+    }
+
+    fun setSearchText(searchText: String) {
+        this.searchText = searchText
     }
 }
