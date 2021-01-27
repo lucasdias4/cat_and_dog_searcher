@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.lucasdias.extensions.loadImage
 import com.lucasdias.ui_components.R
-import com.lucasdias.ui_components.card.model.CardProperties
+import com.lucasdias.ui_components.card.model.CardComponentProperties
 
 class CardComponent @JvmOverloads constructor(
     context: Context,
@@ -37,11 +37,11 @@ class CardComponent @JvmOverloads constructor(
         }
     }
 
-    fun applyProperties(properties: CardProperties) {
+    fun applyProperties(properties: CardComponentProperties) {
         title.text = properties.name
         image.loadImage(
-            url = properties.thumbnail?.url,
-            errorPlaceHolderId = properties.thumbnail?.placeHolder
+            url = properties.image?.url,
+            errorPlaceHolderId = properties.image?.placeHolder
         )
 
         onComponentClickListener(properties.action)

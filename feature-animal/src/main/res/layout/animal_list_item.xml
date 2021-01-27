@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lucasdias.ui_components.card.CardComponent xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_card_component"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />

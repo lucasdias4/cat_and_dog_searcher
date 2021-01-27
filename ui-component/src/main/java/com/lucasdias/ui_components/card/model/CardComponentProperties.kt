@@ -1,8 +1,8 @@
 package com.lucasdias.ui_components.card.model
 
-data class CardProperties(
-    val id: Int?,
+data class CardComponentProperties(
+    val id: String?,
     val name: String?,
-    val thumbnail: CardThumbnailProperties?,
+    val image: CardImageProperties?,
     val action: (() -> Unit)? = null
 )
