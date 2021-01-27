@@ -26,6 +26,19 @@
         app:textInputImeType="done"
         app:textInputStyleType="normal" />
 
+    <TextView
+        android:id="@+id/error_message_search_animal_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_error_message_search_animal_fragment"
+        android:textAppearance="@style/P5"
+        android:textColor="@color/red_pigment"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/button_search_animal_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_text_input_search_animal_fragment" />
+
     <com.lucasdias.ui_components.button.ButtonComponent
         android:id="@+id/button_search_animal_fragment"
         android:layout_width="match_parent"

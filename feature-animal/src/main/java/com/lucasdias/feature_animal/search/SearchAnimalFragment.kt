@@ -3,6 +3,8 @@ package com.lucasdias.feature_animal.search
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.lucasdias.extensions.animateGoneToVisible
+import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.findNavController
 import com.lucasdias.feature_animal.R
 import com.lucasdias.feature_animal.databinding.FragmentSearchAnimalBinding
@@ -26,7 +28,13 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
         with(binding) {
             buttonSearchAnimalFragment.onComponentClickListener {
                 val searchText = searchTextInputSearchAnimalFragment.getTypedText()
-                navigateToAnimalListFragment(searchText)
+
+                if (searchText.isNotEmpty()) {
+                    errorMessageSearchAnimalFragment.animateVisibleToGone()
+                    navigateToAnimalListFragment(searchText)
+                } else {
+                    errorMessageSearchAnimalFragment.animateGoneToVisible()
+                }
             }
         }
     }
