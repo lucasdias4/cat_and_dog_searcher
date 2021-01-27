@@ -1,0 +1,12 @@
+<TextView
+    android:id="@android:id/text1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:lines="1"
+    android:maxLines="1"
+    android:paddingHorizontal="@dimen/padding_horizontal_expanded_spinner_item"
+    android:paddingVertical="@dimen/padding_vertical_expanded_spinner_item"
+    android:background="@color/emperor"
+    style="@style/SpinnerItemStyle"/>

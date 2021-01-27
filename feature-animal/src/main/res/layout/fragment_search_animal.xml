@@ -17,7 +17,7 @@
 
     <Spinner
         android:id="@+id/request_type_spinner_search_animal_fragment"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/search_text_input_search_animal_fragment"
         app:layout_constraintBottom_toTopOf="@id/search_text_input_search_animal_fragment"/>

@@ -1,9 +1,9 @@
 package com.lucasdias.domain.enum
 
 enum class RequestType(val text: String) {
-    CAT("Cat"),
-    DOG("Dog"),
-    BOTH("Both");
+    CAT("Search for cats"),
+    DOG("Search for dogs"),
+    BOTH("Search for both");
 
     companion object {
         fun getRequestTypeByText(option: String?): RequestType {

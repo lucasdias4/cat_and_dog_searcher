@@ -1,6 +1,5 @@
 package com.lucasdias.extensions
 
-import android.R
 import android.content.Context
 import android.view.View
 import android.widget.AdapterView
@@ -10,10 +9,10 @@ import android.widget.Spinner
 fun Spinner.setup(context: Context, options: List<String>, onItemSelectedAction: (String?) -> Unit) {
     val adapter = ArrayAdapter<String>(
         context,
-        R.layout.simple_spinner_dropdown_item,
+        R.layout.collapsed_spinner_item,
         options
     )
-    adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+    adapter.setDropDownViewResource(R.layout.expanded_spinner_item)
     this.adapter = adapter
     this.onItemSelectedListener = this.createListener(onItemSelectedAction)
 }
