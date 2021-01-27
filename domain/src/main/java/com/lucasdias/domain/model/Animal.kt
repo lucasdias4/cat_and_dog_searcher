@@ -1,7 +1,10 @@
 package com.lucasdias.domain.model
 
+import android.os.Parcelable
 import com.lucasdias.domain.enum.AnimalType
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Animal(
     val id: String,
     val name: String,
@@ -9,4 +12,4 @@ data class Animal(
     val imageUrl: String,
     val wikipediaUrl: String?,
     val type: AnimalType
-)
+) : Parcelable

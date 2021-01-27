@@ -6,8 +6,7 @@
     <application>
         <activity
             android:theme="@style/Theme.CatAndDog"
-            android:name=".presentation.BaseActivity"
-            android:screenOrientation="portrait" />
+            android:name=".presentation.BaseActivity" />
     </application>
 
 </manifest>

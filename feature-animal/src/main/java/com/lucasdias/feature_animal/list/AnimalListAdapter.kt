@@ -17,7 +17,7 @@ class AnimalListAdapter(private val navigateToAnimalDetail: ((Animal) -> Unit)) 
         val binding =
             AnimalListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return ViewHolder(binding)
+        return ViewHolder(navigateToAnimalDetail, binding)
     }
 
     override fun getItemCount(): Int = animals.count()
@@ -27,11 +27,15 @@ class AnimalListAdapter(private val navigateToAnimalDetail: ((Animal) -> Unit)) 
     }
 
     fun updateAnimalList(comicSummaries: List<Animal>) {
+        this.animals.clear()
         this.animals.addAll(comicSummaries)
         notifyDataSetChanged()
     }
 
-    class ViewHolder(private val binding: AnimalListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(
+        private val navigateToAnimalDetail: (Animal) -> Unit,
+        private val binding: AnimalListItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(animal: Animal) {
             with(animal) {
@@ -39,6 +43,9 @@ class AnimalListAdapter(private val navigateToAnimalDetail: ((Animal) -> Unit)) 
                 val cardProperties = CardComponentProperties(id, name, imageProperties, null)
 
                 binding.layoutCardComponent.applyProperties(cardProperties)
+                binding.layoutCardComponent.onComponentClickListener {
+                    navigateToAnimalDetail(animal)
+                }
             }
         }
     }

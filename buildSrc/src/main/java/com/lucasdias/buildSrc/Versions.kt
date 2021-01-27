@@ -31,7 +31,7 @@ object Versions {
     const val junit = "4.12"
     const val junit_android = "1.1.1"
     const val koin = "2.2.0-rc-4"
-    const val kotlin = "1.3.72"
+    const val kotlin = "1.4.20"
     const val ktlint = "0.36.0"
     const val legacy_support = "1.0.0"
     const val logging_interceptor = "4.2.1"

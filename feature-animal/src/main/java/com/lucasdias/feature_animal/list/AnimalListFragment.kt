@@ -2,8 +2,7 @@ package com.lucasdias.feature_animal.list
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lucasdias.base.presentation.BaseFragment
@@ -68,6 +67,7 @@ class AnimalListFragment : BaseFragment<List<Animal>>(
     }
 
     private fun navigateToAnimalDetail(animal: Animal) {
-        Toast.makeText(requireContext(), animal.name, LENGTH_LONG).show()
+        val directions = AnimalListFragmentDirections.navigateToAnimalDetail(animal)
+        findNavController().navigate(directions)
     }
 }

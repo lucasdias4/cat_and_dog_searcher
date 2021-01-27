@@ -1,9 +1,6 @@
 import com.lucasdias.buildSrc.Dependencies
 
 buildscript {
-    ext {
-        kotlin_version = '1.3.72'
-    }
     repositories {
         google()
         jcenter()
@@ -17,7 +14,6 @@ buildscript {
         classpath Dependencies.Tool.gradle
         classpath Dependencies.Tool.gradle_kotlin_plugin
         classpath Dependencies.Tool.navigation_safe_args
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
