@@ -3,21 +3,25 @@ package com.lucasdias.feature_animal.search
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.lucasdias.domain.enum.RequestType
 import com.lucasdias.extensions.animateGoneToVisible
 import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.findNavController
+import com.lucasdias.extensions.setup
 import com.lucasdias.feature_animal.R
 import com.lucasdias.feature_animal.databinding.FragmentSearchAnimalBinding
 
 class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
 
     private lateinit var binding: FragmentSearchAnimalBinding
+    private var requestType = RequestType.CAT
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupBinding(view)
         setupSearchButton()
+        setupSpinner()
     }
 
     private fun setupBinding(view: View) {
@@ -41,8 +45,21 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
         }
     }
 
+    private fun setupSpinner() {
+        val options = listOf(RequestType.CAT.text, RequestType.DOG.text, RequestType.BOTH.text)
+
+        binding.requestTypeSpinnerSearchAnimalFragment.setup(
+            requireContext(),
+            options
+        ) { option -> onSpinnerOptionSelected(option) }
+    }
+
+    private fun onSpinnerOptionSelected(option: String?) {
+        requestType = RequestType.getRequestTypeByText(option)
+    }
+
     private fun navigateToAnimalListFragment(searchText: String) {
-        val directions = SearchAnimalFragmentDirections.navigateToAnimalList(searchText)
+        val directions = SearchAnimalFragmentDirections.navigateToAnimalList(searchText, requestType)
         findNavController().navigate(directions)
     }
 }

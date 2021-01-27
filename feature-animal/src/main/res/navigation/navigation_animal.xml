@@ -26,5 +26,9 @@
             android:name="search_text"
             app:argType="string" />
 
+        <argument
+            android:name="request_type"
+            app:argType="com.lucasdias.domain.enum.RequestType" />
+
     </fragment>
 </navigation>

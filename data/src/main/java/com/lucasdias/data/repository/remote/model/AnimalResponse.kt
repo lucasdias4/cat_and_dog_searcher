@@ -7,5 +7,5 @@ open class AnimalResponse(
     val name: String,
     val temperament: String,
     @SerializedName("reference_image_id") val imageId: String,
-    @SerializedName("wikipedia_url") val wikipediaUrl: String
+    @SerializedName("wikipedia_url") val wikipediaUrl: String?
 )

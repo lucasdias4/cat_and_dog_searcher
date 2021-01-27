@@ -31,7 +31,7 @@ class AnimalListFragment : BaseFragment<List<Animal>>(
     private lateinit var binding: FragmentAnimalListBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.setSearchText(args.searchText)
+        viewModel.setupRequest(args.searchText, args.requestType)
         super.onViewCreated(view, savedInstanceState)
         setupBinding(view)
         setupResponseObserver()

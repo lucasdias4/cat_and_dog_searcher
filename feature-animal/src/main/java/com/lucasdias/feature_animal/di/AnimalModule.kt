@@ -19,6 +19,8 @@ val animalModule = module {
     }
 
     factory { (navigateToAnimalDetail: ((Animal) -> Unit)) ->
-        AnimalListAdapter(navigateToAnimalDetail)
+        AnimalListAdapter(
+            navigateToAnimalDetail
+        )
     }
 }
