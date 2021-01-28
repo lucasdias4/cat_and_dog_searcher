@@ -7,7 +7,11 @@ import androidx.lifecycle.Observer
 import com.lucasdias.core.connectivity.Connectivity
 import com.lucasdias.core.di.CONNECTIVITY
 import com.lucasdias.domain.enum.RequestType
-import com.lucasdias.extensions.*
+import com.lucasdias.extensions.animateGoneToVisible
+import com.lucasdias.extensions.animateVisibleToGone
+import com.lucasdias.extensions.findNavController
+import com.lucasdias.extensions.setup
+import com.lucasdias.extensions.showConnectivitySnackbar
 import com.lucasdias.feature_animal.R
 import com.lucasdias.feature_animal.databinding.FragmentSearchAnimalBinding
 import org.koin.android.ext.android.inject
@@ -69,7 +73,8 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
     }
 
     private fun navigateToAnimalListFragment(searchText: String) {
-        val directions = SearchAnimalFragmentDirections.navigateToAnimalList(searchText, requestType)
+        val directions =
+            SearchAnimalFragmentDirections.navigateToAnimalList(searchText, requestType)
         findNavController().navigate(directions)
     }
 }
