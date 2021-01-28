@@ -1,1 +1,4 @@
-<resources></resources>
+<resources>
+    <!--    Success Without Content View-->
+    <string name="text_success_without_content_view">We didn\'t find any breed of animal with this name. Try again.</string>
+</resources>

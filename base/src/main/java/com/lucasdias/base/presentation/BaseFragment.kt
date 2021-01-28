@@ -3,7 +3,6 @@ package com.lucasdias.base.presentation
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
@@ -22,15 +21,17 @@ import org.koin.core.qualifier.named
 
 abstract class BaseFragment<T : Any>(
     @IdRes private val successViewId: Int,
+    @IdRes private val successWithoutContentViewId: Int? = null,
     @IdRes private val loadingViewId: Int,
     @IdRes private val errorViewId: Int,
     @LayoutRes private val fragmentLayoutId: Int
 ) : Fragment(fragmentLayoutId) {
 
     protected abstract val viewModel: BaseViewModel<T>
-    protected lateinit var successView: ViewGroup
-    protected lateinit var errorView: ErrorViewComponent
     protected lateinit var loadingView: ShimmerFrameLayout
+    protected lateinit var errorView: ErrorViewComponent
+    protected lateinit var successView: ViewGroup
+    protected var successWithoutContentView: ViewGroup? = null
     private val connectivity by inject<Connectivity>(named(CONNECTIVITY))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,12 +40,19 @@ abstract class BaseFragment<T : Any>(
         connectivitySetup()
         setupErrorView(view)
         setupSuccessView(view)
+        setupSuccessWithoutContentView(view)
         setupLoadingView(view)
         viewModel.executeRequest()
     }
 
     private fun setupSuccessView(view: View) {
         successView = view.findViewById(successViewId)
+    }
+
+    private fun setupSuccessWithoutContentView(view: View) {
+        successWithoutContentViewId?.let { layoutId ->
+            successWithoutContentView = view.findViewById(layoutId)
+        }
     }
 
     private fun setupErrorView(view: View) {
@@ -85,6 +93,7 @@ abstract class BaseFragment<T : Any>(
         if (viewModel.isInitialRequest() && errorView.visibility != View.VISIBLE) {
             loadingView.visible()
             successView.animateVisibleToGone()
+            successWithoutContentView?.animateVisibleToGone()
         }
     }
 
@@ -92,12 +101,18 @@ abstract class BaseFragment<T : Any>(
         errorView.button.isLoading = false
 
         successView.animateGoneToVisible()
+        successWithoutContentView?.animateVisibleToGone()
         loadingView.animateVisibleToGone()
         errorView.animateVisibleToGone()
     }
 
     open fun onSuccessWithoutContent() {
-        Toast.makeText(requireContext(), "onSuccessWithoutContent", Toast.LENGTH_LONG).show()
+        errorView.button.isLoading = false
+
+        successWithoutContentView?.animateGoneToVisible()
+        successView.animateVisibleToGone()
+        loadingView.animateVisibleToGone()
+        errorView.animateVisibleToGone()
     }
 
     open fun onError(throwable: Throwable?) {
@@ -106,6 +121,7 @@ abstract class BaseFragment<T : Any>(
         } else if (viewModel.isInitialRequest()) {
             errorView.animateGoneToVisible()
             successView.animateVisibleToGone()
+            successWithoutContentView?.animateVisibleToGone()
             loadingView.animateVisibleToGone()
         }
     }

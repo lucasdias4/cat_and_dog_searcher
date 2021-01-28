@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Success Without Content View-->
+    <dimen name="width_icon_success_without_content_view">120dp</dimen>
+    <dimen name="height_icon_success_without_content_view">150dp</dimen>
+    <dimen name="padding_horizontal_text_success_without_content_view">40dp</dimen>
+</resources>

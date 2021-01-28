@@ -17,6 +17,7 @@ import org.koin.core.parameter.parametersOf
 @Suppress("UNCHECKED_CAST")
 class AnimalListFragment : BaseFragment<List<Animal>>(
     successViewId = R.id.recycler_view_fragment_animal_list,
+    successWithoutContentViewId = R.id.success_without_content_fragment_animal_list,
     loadingViewId = R.id.loading_layout_fragment_animal_list,
     errorViewId = R.id.error_view_fragment_animal_list,
     fragmentLayoutId = R.layout.fragment_animal_list

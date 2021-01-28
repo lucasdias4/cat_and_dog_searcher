@@ -44,6 +44,7 @@ android {
 dependencies {
     implementation project (Dependencies.Module.core)
     implementation project (Dependencies.Module.extensions)
+    implementation project (Dependencies.Module.resource)
     implementation project (Dependencies.Module.ui_component)
 
     implementation Dependencies.Core.navigation_fragment

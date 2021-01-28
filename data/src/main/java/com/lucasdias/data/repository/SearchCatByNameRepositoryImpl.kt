@@ -28,6 +28,8 @@ class SearchCatByNameRepositoryImpl(
         }
 
         this.value()?.let {
+            if (it.isEmpty()) return Resource.SuccessWithoutContent()
+
             val animals = it.toDomain(AnimalType.CAT)
 
             return Resource.Success(animals)
