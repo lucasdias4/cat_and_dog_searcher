@@ -32,7 +32,7 @@ class AnimalDetailFragment : Fragment(R.layout.fragment_animal_detail) {
     }
 
     private fun setupImage() {
-        binding.imageFragmentAnimalDetail.loadImage(args.animal.imageUrl)
+        binding.imageFragmentAnimalDetail.loadImage(args.animal.imageUrl, R.drawable.picture_place_holder)
     }
 
     private fun setupButton() = with(binding.wikipediaButtonFragmentAnimalDetail) {
