@@ -3,16 +3,19 @@ package com.lucasdias.feature_animal.search
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import com.lucasdias.core.connectivity.Connectivity
+import com.lucasdias.core.di.CONNECTIVITY
 import com.lucasdias.domain.enum.RequestType
-import com.lucasdias.extensions.animateGoneToVisible
-import com.lucasdias.extensions.animateVisibleToGone
-import com.lucasdias.extensions.findNavController
-import com.lucasdias.extensions.setup
+import com.lucasdias.extensions.*
 import com.lucasdias.feature_animal.R
 import com.lucasdias.feature_animal.databinding.FragmentSearchAnimalBinding
+import org.koin.android.ext.android.inject
+import org.koin.core.qualifier.named
 
 class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
 
+    private val connectivity by inject<Connectivity>(named(CONNECTIVITY))
     private lateinit var binding: FragmentSearchAnimalBinding
     private var requestType = RequestType.CAT
 
@@ -22,6 +25,7 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
         setupBinding(view)
         setupSearchButton()
         setupSpinner()
+        connectivitySetup()
     }
 
     private fun setupBinding(view: View) {
@@ -52,6 +56,12 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
             requireContext(),
             options
         ) { option -> onSpinnerOptionSelected(option) }
+    }
+
+    private fun connectivitySetup() {
+        connectivity.getLiveData().observe(viewLifecycleOwner, Observer { hasNetworkConnectivity ->
+            view?.showConnectivitySnackbar(hasNetworkConnectivity)
+        })
     }
 
     private fun onSpinnerOptionSelected(option: String?) {
