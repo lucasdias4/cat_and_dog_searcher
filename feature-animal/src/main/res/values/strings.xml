@@ -1,3 +1,11 @@
 <resources>
+    <!--  Search Animal Fragment -->
     <string name="text_error_message_search_animal_fragment">Please write the name of an animal breed</string>
+
+    <!--  Animal Detail Section  -->
+    <string name="name_title_fragment_animal_detail">Name</string>
+
+    <!--  Animal Detail Fragment  -->
+    <string name="temperament_title_fragment_animal_detail">Temperament</string>
+    <string name="lifetime_title_fragment_animal_detail">Lifetime</string>
 </resources>

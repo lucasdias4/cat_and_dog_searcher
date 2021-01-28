@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_first"
     tools:context=".detail.AnimalDetailFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/image_fragment_animal_detail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_fragment_animal_detail"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/name_fragment_animal_detail"
+            layout="@layout/animal_detail_section" />
+
+        <include
+            android:id="@+id/temperament_fragment_animal_detail"
+            layout="@layout/animal_detail_section" />
+
+        <include
+            android:id="@+id/lifetime_fragment_animal_detail"
+            layout="@layout/animal_detail_section" />
+
+        <com.lucasdias.ui_components.button.ButtonComponent
+            android:id="@+id/wikipedia_button_fragment_animal_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingVertical="@dimen/padding_vertical_image_fragment_animal_detail"
+            app:buttonColorType="transparent"
+            app:buttonSizeType="large"
+            app:buttonText="access wikipedia" />
+    </LinearLayout>
+</ScrollView>

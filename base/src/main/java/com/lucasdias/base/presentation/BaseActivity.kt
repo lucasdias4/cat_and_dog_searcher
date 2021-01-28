@@ -46,6 +46,7 @@ open class BaseActivity : AppCompatActivity() {
         fun launch(
             context: Context,
             @NavigationRes graphResId: Int,
+            intentFlag: Int = Intent.FLAG_ACTIVITY_NEW_TASK,
             block: (() -> Bundle)? = null
         ) {
             val bundle = (block?.invoke() ?: Bundle()).apply {
@@ -53,7 +54,7 @@ open class BaseActivity : AppCompatActivity() {
             }
 
             val intent = Intent(context, BaseActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.flags = intentFlag
 
             intent.putExtras(bundle)
             context.startActivity(intent)

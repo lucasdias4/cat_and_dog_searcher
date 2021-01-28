@@ -16,6 +16,7 @@ private fun AnimalResponse.toDomain(animalType: AnimalType): Animal {
         this.name,
         this.temperament,
         animalType.getImageUrlByAnimalType(this.imageId),
+        this.lifetime,
         this.wikipediaUrl,
         animalType
     )

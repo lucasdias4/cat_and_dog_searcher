@@ -4,4 +4,15 @@
     <dimen name="margin_top_logo_view_search_animal_fragment">60dp</dimen>
     <dimen name="margin_bottom_search_text_input_search_animal_fragment">48dp</dimen>
     <dimen name="margin_bottom_button_search_animal_fragment">16dp</dimen>
+
+    <!--  Animal Detail Section  -->
+    <dimen name="padding_layout_animal_detail_section">16dp</dimen>
+    <dimen name="elevation_title_card_view_animal_detail_section">4dp</dimen>
+    <dimen name="padding_horizontal_title_card_view_animal_detail_section">8dp</dimen>
+    <dimen name="max_width_title_animal_detail_section">320dp</dimen>
+    <dimen name="padding_horizontal_title_animal_detail_section">4dp</dimen>
+
+    <!--  Animal Detail Fragment  -->
+    <dimen name="height_image_fragment_animal_detail">400dp</dimen>
+    <dimen name="padding_vertical_image_fragment_animal_detail">16dp</dimen>
 </resources>

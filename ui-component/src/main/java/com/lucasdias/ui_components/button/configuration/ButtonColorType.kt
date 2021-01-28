@@ -17,8 +17,14 @@ enum class ButtonColorType(
     ),
     SECONDARY(
         id = 1,
-        backgroundColor = R.color.emperor,
+        backgroundColor = R.color.gray,
         textColor = R.color.wild_sand,
+        progressBarColor = R.color.wild_sand
+    ),
+    TRANSPARENT(
+        id = 2,
+        backgroundColor = R.color.transparent,
+        textColor = R.color.bilbao,
         progressBarColor = R.color.wild_sand
     );
 
@@ -30,6 +36,7 @@ enum class ButtonColorType(
             return when (id) {
                 PRIMARY.id -> PRIMARY
                 SECONDARY.id -> SECONDARY
+                TRANSPARENT.id -> TRANSPARENT
                 else -> throw IllegalArgumentException("Could not map this type of button color. ID not mapped: $id")
             }
         }

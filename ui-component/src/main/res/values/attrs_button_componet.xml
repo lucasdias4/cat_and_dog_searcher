@@ -9,6 +9,7 @@
         <attr name="buttonColorType" format="enum">
             <enum name="primary" value="0"/>
             <enum name="secondary" value="1"/>
+            <enum name="transparent" value="2"/>
         </attr>
 
         <attr name="buttonCornerType" format="enum">

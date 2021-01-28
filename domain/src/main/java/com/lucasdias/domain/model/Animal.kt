@@ -10,6 +10,7 @@ data class Animal(
     val name: String,
     val temperament: String,
     val imageUrl: String,
+    val lifetime: String,
     val wikipediaUrl: String?,
     val type: AnimalType
 ) : Parcelable
