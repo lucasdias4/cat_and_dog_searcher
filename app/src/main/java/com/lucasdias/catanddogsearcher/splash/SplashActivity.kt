@@ -1,5 +1,6 @@
 package com.lucasdias.catanddogsearcher.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -39,7 +40,11 @@ class SplashActivity : AppCompatActivity() {
 
     private fun startNextViewWithDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
-            BaseActivity.launch(this, R.navigation.navigation_animal)
+            BaseActivity.launch(
+                this,
+                R.navigation.navigation_animal,
+                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            )
         }, DELAY_TIME)
     }
 
