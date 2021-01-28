@@ -1,9 +1,9 @@
-<TextView
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/text1"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SpinnerItemStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/background_first"
     android:ellipsize="end"
     android:lines="1"
-    android:maxLines="1"
-    style="@style/SpinnerItemStyle"/>
+    android:maxLines="1" />

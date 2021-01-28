@@ -10,6 +10,7 @@
     <color name="background_second">@color/nero</color>
     <color name="background_third">@color/emperor</color>
     <color name="background_fourth">@color/bilbao</color>
+    <color name="background_fifth">@color/wild_sand</color>
 
     <color name="alto">#CFCFCF</color>
     <color name="bilbao">#177718</color>
