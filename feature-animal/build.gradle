@@ -73,15 +73,4 @@ dependencies {
     testImplementation Dependencies.Test.junit
     testImplementation Dependencies.Test.mockk
     testImplementation Dependencies.Test.kotlinx_coroutines_test
-
-    debugImplementation Dependencies.Test.fragment_testing
-    androidTestImplementation Dependencies.Test.espresso_contrib
-    androidTestImplementation Dependencies.Test.espresso_core
-    androidTestImplementation Dependencies.Test.espresso_intents
-    androidTestImplementation Dependencies.Test.junit_android
-    androidTestImplementation Dependencies.Test.koin
-    androidTestImplementation Dependencies.Test.mockk_android
-    androidTestImplementation Dependencies.Test.test_runner
-    androidTestImplementation Dependencies.Test.kotlinx_coroutines_test
-
 }
