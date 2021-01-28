@@ -54,8 +54,10 @@ class AnimalDetailFragment : Fragment(R.layout.fragment_animal_detail) {
     private fun setupSection(
         section: AnimalDetailSectionBinding,
         @StringRes titleRes: Int,
-        text: String
+        text: String?
     ) {
+        if (text.isNullOrEmpty()) section.layoutAnimalDetailSection.gone()
+
         section.titleAnimalDetailSection.text = getText(titleRes)
         section.textAnimalDetailSection.text = text
     }
