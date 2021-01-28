@@ -23,7 +23,7 @@ object Versions {
     const val constraint_layout = "2.0.4"
     const val core_ktx = "1.2.0"
     const val core_testing = "2.1.0"
-    const val coroutines = "1.3.5"
+    const val coroutines = "1.4.1"
     const val espresso = "3.2.0"
     const val fragment_testing = "1.2.4"
     const val gradle = "4.1.0"

@@ -12,6 +12,8 @@ object Dependencies {
 
         const val coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:" + Versions.coroutines
 
+        const val coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" + Versions.coroutines
+
         const val legacy_support: String =
             "androidx.legacy:legacy-support-v4:" + Versions.legacy_support
 

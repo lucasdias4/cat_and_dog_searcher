@@ -26,9 +26,11 @@ class AnimalListAdapter(private val navigateToAnimalDetail: ((Animal) -> Unit)) 
         holder.bind(animal = animals[position])
     }
 
-    fun updateAnimalList(comicSummaries: List<Animal>) {
+    fun updateAnimalList(animals: List<Animal>) {
         this.animals.clear()
-        this.animals.addAll(comicSummaries)
+        this.animals.addAll(animals)
+        this.animals.sortBy { it.name }
+
         notifyDataSetChanged()
     }
 

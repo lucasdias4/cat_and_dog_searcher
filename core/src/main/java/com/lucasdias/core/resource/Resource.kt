@@ -7,6 +7,8 @@ sealed class Resource<T> {
     abstract fun value(): T?
     abstract fun error(): Exception?
 
+    fun isAnError() = error() != null
+
     data class Success<T>(val value: T) : Resource<T>() {
         override fun value() = value
         override fun error() = null

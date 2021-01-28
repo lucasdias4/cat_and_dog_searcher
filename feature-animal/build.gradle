@@ -54,6 +54,7 @@ dependencies {
     implementation project(Dependencies.Module.extensions)
     implementation project(Dependencies.Module.ui_component)
 
+    implementation Dependencies.Core.coroutines_core
     implementation Dependencies.Core.navigation_fragment
     implementation Dependencies.Core.navigation_ui
 
