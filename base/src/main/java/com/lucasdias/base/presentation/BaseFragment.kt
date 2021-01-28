@@ -37,7 +37,7 @@ abstract class BaseFragment<T : Any>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        connectivitySetup()
+        setupConnectivity()
         setupErrorView(view)
         setupSuccessView(view)
         setupSuccessWithoutContentView(view)
@@ -66,7 +66,7 @@ abstract class BaseFragment<T : Any>(
         loadingView = view.findViewById(loadingViewId)
     }
 
-    private fun connectivitySetup() {
+    private fun setupConnectivity() {
         connectivity.getLiveData().observe(viewLifecycleOwner, Observer { hasNetworkConnectivity ->
             viewModel.updateConnectivityStatus(hasNetworkConnectivity)
             view?.showConnectivitySnackbar(hasNetworkConnectivity)

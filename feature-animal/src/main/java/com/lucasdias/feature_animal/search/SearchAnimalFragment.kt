@@ -25,7 +25,7 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
         setupBinding(view)
         setupSearchButton()
         setupSpinner()
-        connectivitySetup()
+        setupConnectivity()
     }
 
     private fun setupBinding(view: View) {
@@ -58,7 +58,7 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
         ) { option -> onSpinnerOptionSelected(option) }
     }
 
-    private fun connectivitySetup() {
+    private fun setupConnectivity() {
         connectivity.getLiveData().observe(viewLifecycleOwner, Observer { hasNetworkConnectivity ->
             view?.showConnectivitySnackbar(hasNetworkConnectivity)
         })

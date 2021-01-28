@@ -41,11 +41,11 @@ class TextInputComponent @JvmOverloads constructor(
     fun getTypedText() = editText.text.toString()
 
     fun notifySuccess() {
-        styleSetup(style.backgroundDrawable, style.hintColor, style.toggleColor)
+        setupStyle(style.backgroundDrawable, style.hintColor, style.toggleColor)
     }
 
     fun notifyError() {
-        styleSetup(style.errorBackgroundDrawable, style.errorHintColor, style.errorToggleColor)
+        setupStyle(style.errorBackgroundDrawable, style.errorHintColor, style.errorToggleColor)
     }
 
     private fun loadAttr(attrs: AttributeSet?, @AttrRes defStyleAttr: Int = 0) {
@@ -58,13 +58,13 @@ class TextInputComponent @JvmOverloads constructor(
     }
 
     private fun setup() {
-        styleSetup(style.backgroundDrawable, style.hintColor, style.toggleColor)
-        imeSetup(ime)
-        entryTypeSetup(entryType)
-        hintTextSetup(hint)
+        setupStyle(style.backgroundDrawable, style.hintColor, style.toggleColor)
+        setupIme(ime)
+        setupEntryType(entryType)
+        setupHintText(hint)
     }
 
-    private fun styleSetup(
+    private fun setupStyle(
         @DrawableRes backgroundDrawable: Int,
         @ColorRes hintColor: Int,
         @ColorRes toggleColor: Int
@@ -75,17 +75,17 @@ class TextInputComponent @JvmOverloads constructor(
         layout.defaultHintTextColor = ColorStateList.valueOf(ContextCompat.getColor(context, toggleColor))
     }
 
-    private fun imeSetup(ime: TextInputImeType) {
+    private fun setupIme(ime: TextInputImeType) {
         editText.imeOptions = ime.action
     }
 
-    private fun entryTypeSetup(inputType: TextInputEntryType) {
+    private fun setupEntryType(inputType: TextInputEntryType) {
         layout.endIconMode = inputType.iconMode
         editText.inputType = inputType.type
         editText.transformationMethod = inputType.transformationType
     }
 
-    private fun hintTextSetup(text: String) {
+    private fun setupHintText(text: String) {
         layout.hint = text
     }
 }

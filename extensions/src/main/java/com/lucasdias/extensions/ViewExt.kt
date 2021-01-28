@@ -6,7 +6,6 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.TextView
 import androidx.annotation.DrawableRes
-import androidx.annotation.IdRes
 import androidx.core.animation.doOnEnd
 import androidx.core.animation.doOnStart
 import androidx.core.view.isVisible
@@ -19,34 +18,6 @@ fun View.visible() {
 
 fun View.gone() {
     visibility = View.GONE
-}
-
-fun <T : View> bind(view: T, @IdRes id: Int): Lazy<T> {
-    return lazy { view.findViewById<T>(id) }
-}
-
-fun View.animateVisibleToInvisible() {
-    if (this.isVisible) {
-        this.startAlphaAnimation(
-            alphaStart = 1F,
-            alphaEnd = 0F,
-            visibilityStart = View.VISIBLE,
-            visibilityEnd = View.INVISIBLE,
-            animationDuration = 500L
-        )
-    }
-}
-
-fun View.animateInvisibleToVisible() {
-    if (this.isVisible.not()) {
-        this.startAlphaAnimation(
-            alphaStart = 0F,
-            alphaEnd = 1F,
-            visibilityStart = View.INVISIBLE,
-            visibilityEnd = View.VISIBLE,
-            animationDuration = 500L
-        )
-    }
 }
 
 fun View.animateVisibleToGone() {
