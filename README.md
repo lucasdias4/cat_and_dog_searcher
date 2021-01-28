@@ -74,13 +74,6 @@ I tried to follow the concepts of Clean Architecture, so I divided the project i
 
 * **buildSrc module**: is where all the dependencies and versions used for the project relies.
 
-## Code style
-The order of the methods and variables follow the following ordering pattern:
-* override;
-* public;
-* internal;
-* private.
-
 ## Main dependencies
 **Koin** - _dependence injection_
  <p> Library chosen for its simple implementation. As a negative point, there is some loss of performance when compared to other competitors, such as Dagger. There is no significant loss for this application. </p>
