@@ -1,5 +1,6 @@
 package com.lucasdias.feature_animal.list
 
+import androidx.annotation.VisibleForTesting
 import com.lucasdias.base.presentation.BaseViewModel
 import com.lucasdias.core.resource.Resource
 import com.lucasdias.domain.enum.RequestType
@@ -12,8 +13,8 @@ class AnimalListViewModel(
     coroutineContext: CoroutineDispatcher
 ) : BaseViewModel<List<Animal>>(coroutineContext) {
 
-    private var searchText = ""
-    private var requestType = RequestType.CAT
+    @VisibleForTesting internal var searchText = ""
+    @VisibleForTesting internal var requestType = RequestType.CAT
 
     override suspend fun request(): Resource<List<Animal>> {
         return searchAnimalByNameAndType(searchText, requestType)
