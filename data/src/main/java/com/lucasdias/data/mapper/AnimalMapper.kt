@@ -23,7 +23,6 @@ private fun AnimalResponse.toDomain(animalType: AnimalType): Animal {
 }
 
 private fun AnimalType.getImageUrlByAnimalType(imageId: String?): String {
-
     return when (this) {
         AnimalType.CAT -> "$CAT_IMAGE_URL$imageId.jpg"
         else -> "$DOG_IMAGE_URL$imageId.jpg"

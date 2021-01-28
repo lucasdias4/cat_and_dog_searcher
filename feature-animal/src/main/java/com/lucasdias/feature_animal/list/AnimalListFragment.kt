@@ -23,8 +23,8 @@ class AnimalListFragment : BaseFragment<List<Animal>>(
     fragmentLayoutId = R.layout.fragment_animal_list
 ) {
 
-    private val args: AnimalListFragmentArgs by navArgs()
     override val viewModel by viewModel<AnimalListViewModel>()
+    private val args: AnimalListFragmentArgs by navArgs()
     private val adapter by inject<AnimalListAdapter> {
         parametersOf({ animal: Animal -> navigateToAnimalDetail(animal) })
     }
