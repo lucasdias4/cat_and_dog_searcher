@@ -14,27 +14,10 @@ class SearchDogByNameRepositoryImpl(
 ) : SearchDogByNameRepository {
 
     override suspend fun fetch(name: String): Resource<List<Animal>> {
-        val response: Resource<List<AnimalResponse>> =
-            Resource.of {
-                service.fetchByName(DOG_API_KEY, name)
-            }
-
-        return response.getTreatedResponse()
-    }
-
-    private fun Resource<List<AnimalResponse>>.getTreatedResponse(): Resource<List<Animal>> {
-        this.error()?.let {
-            return Resource.Error(it)
+        val response = Resource.listOf<AnimalResponse> {
+            service.fetchByName(DOG_API_KEY, name)
         }
 
-        this.value()?.let {
-            if (it.isEmpty()) return Resource.SuccessWithoutContent()
-
-            val animals = it.toDomain(AnimalType.DOG)
-
-            return Resource.Success(animals)
-        } ?: run {
-            return Resource.SuccessWithoutContent()
-        }
+        return response.toDomain(AnimalType.DOG)
     }
 }
