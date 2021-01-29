@@ -9,7 +9,7 @@ sealed class Resource<T> {
 
     fun isAnError() = error() != null
 
-    data class Success<T>(val value: T) : Resource<T>() {
+    data class Success<T>(private val value: T) : Resource<T>() {
         override fun value() = value
         override fun error() = null
     }
@@ -19,7 +19,7 @@ sealed class Resource<T> {
         override fun error() = null
     }
 
-    data class Error<T>(val exception: Exception) : Resource<T>() {
+    data class Error<T>(private val exception: Exception) : Resource<T>() {
         override fun value() = null
         override fun error() = exception
     }
@@ -33,6 +33,13 @@ sealed class Resource<T> {
         suspend fun <V : Any> of(suspendFunction: suspend () -> V): Resource<V> = try {
             val value = suspendFunction()
             Success(value)
+        } catch (exception: Exception) {
+            Error(exception)
+        }
+
+        suspend fun <V> listOf(suspendFunction: suspend () -> List<V>): Resource<List<V>> = try {
+            val value = suspendFunction()
+            value.getCorrectTypeOSuccessResource()
         } catch (exception: Exception) {
             Error(exception)
         }

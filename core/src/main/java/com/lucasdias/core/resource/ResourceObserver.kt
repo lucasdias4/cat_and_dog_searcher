@@ -12,9 +12,9 @@ class ResourceObserver<T>(
     override fun onChanged(resource: Resource<T>?) {
         when (resource) {
             is Resource.Loading -> loading?.invoke()
-            is Resource.Success -> success?.invoke(resource.value)
+            is Resource.Success -> success?.invoke(resource.value())
             is Resource.SuccessWithoutContent -> successWithoutContent?.invoke()
-            is Resource.Error -> error?.invoke(resource.exception)
+            is Resource.Error -> error?.invoke(resource.error())
         }
     }
 }

@@ -45,3 +45,8 @@ fun <T> List<Resource<List<T>>>.mergeResources(): Resource<List<T>> {
     return if (resourceList.isEmpty()) Resource.SuccessWithoutContent()
     else Resource.Success(resourceList)
 }
+
+fun <E> List<E>.getCorrectTypeOSuccessResource(): Resource<List<E>> {
+    return if (this.isEmpty()) Resource.SuccessWithoutContent()
+    else Resource.Success(this)
+}
