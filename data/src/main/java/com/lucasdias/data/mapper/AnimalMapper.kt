@@ -16,7 +16,7 @@ fun Resource<List<AnimalResponse>>.toDomain(animalType: AnimalType): Resource<Li
     }
 }
 
-fun Resource.Success<List<AnimalResponse>>.toDomain(animalType: AnimalType): Resource.Success<List<Animal>> {
+private fun Resource.Success<List<AnimalResponse>>.toDomain(animalType: AnimalType): Resource.Success<List<Animal>> {
     return Resource.Success(this.value().map { it.toDomain(animalType) })
 }
 
