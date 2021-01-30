@@ -39,7 +39,7 @@ sealed class Resource<T> {
 
         suspend fun <V> listOf(suspendFunction: suspend () -> List<V>): Resource<List<V>> = try {
             val value = suspendFunction()
-            value.getCorrectTypeOSuccessResource()
+            value.getCorrectSuccessResourceType()
         } catch (exception: Exception) {
             Error(exception)
         }
