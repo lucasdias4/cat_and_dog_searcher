@@ -1,7 +1,5 @@
 package com.lucasdias.core.resource
 
-import java.lang.Exception
-
 @Suppress("UNCHECKED_CAST")
 sealed class Resource<T> {
     abstract fun value(): T?

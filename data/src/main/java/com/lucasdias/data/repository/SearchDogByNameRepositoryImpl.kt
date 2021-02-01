@@ -13,7 +13,7 @@ class SearchDogByNameRepositoryImpl(
     private val service: DogService
 ) : SearchDogByNameRepository {
 
-    //TODO: Implement .startWith
+    // TODO: Implement .startWith
     override fun fetch(name: String): Observable<Resource<List<Animal>>> {
         return service.fetchByName(DOG_API_KEY, name)
             .toObservable()

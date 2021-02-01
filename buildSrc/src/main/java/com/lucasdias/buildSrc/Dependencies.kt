@@ -29,10 +29,9 @@ object Dependencies {
         const val kotlin_stdlib_jdk8: String =
             "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" + Versions.kotlin
 
-        const val rx_java: String =  "io.reactivex.rxjava3:rxjava:" + Versions.rx_java
+        const val rx_java: String = "io.reactivex.rxjava3:rxjava:" + Versions.rx_java
 
-        const val rx_android: String =  "io.reactivex.rxjava3:rxandroid:" + Versions.rx_android
-
+        const val rx_android: String = "io.reactivex.rxjava3:rxandroid:" + Versions.rx_android
     }
 
     object Data {

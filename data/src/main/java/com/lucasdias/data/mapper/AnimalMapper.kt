@@ -8,7 +8,7 @@ import com.lucasdias.domain.enum.AnimalType
 import com.lucasdias.domain.model.Animal
 
 fun List<AnimalResponse>?.toDomain(animalType: AnimalType): Resource<List<Animal>> {
-    return if(this.isNullOrEmpty()) Resource.SuccessWithoutContent()
+    return if (this.isNullOrEmpty()) Resource.SuccessWithoutContent()
     else Resource.Success(this.map { it.toDomain(animalType) })
 }
 

@@ -13,7 +13,7 @@ class SearchCatByNameRepositoryImpl(
     private val service: CatService
 ) : SearchCatByNameRepository {
 
-    //TODO: Implement .startWith
+    // TODO: Implement .startWith
     override fun fetch(name: String): Observable<Resource<List<Animal>>> {
         return service.fetchByName(CAT_API_KEY, name)
             .toObservable()

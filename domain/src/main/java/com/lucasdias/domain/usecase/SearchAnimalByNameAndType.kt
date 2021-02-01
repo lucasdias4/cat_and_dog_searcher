@@ -18,7 +18,7 @@ class SearchAnimalByNameAndType(
             else -> { searchCatByNameRepository.fetch(name) }
         }
     }
-//TODO: Implement merge of two requests
+// TODO: Implement merge of two requests
 
 //    private suspend fun searchBothTypesByName(name: String): Resource<List<Animal>> = coroutineScope {
 //        val resources = awaitAll(
