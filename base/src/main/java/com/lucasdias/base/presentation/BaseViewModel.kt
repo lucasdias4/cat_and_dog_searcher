@@ -7,6 +7,7 @@ import com.lucasdias.core.connectivity.Connectivity
 import com.lucasdias.core.resource.Resource
 import com.lucasdias.core.scheduler.RequestSchedulers
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 abstract class BaseViewModel<T : Any?>(
     private val connectivity: Connectivity,
@@ -15,8 +16,8 @@ abstract class BaseViewModel<T : Any?>(
 
     val responseLiveData: LiveData<Resource<T>> by lazy { _responseLiveData }
     private val _responseLiveData: MutableLiveData<Resource<T>> by lazy { MutableLiveData<Resource<T>>() }
+    private val disposable = CompositeDisposable()
     private var isInitialRequest = true
-    private var hasNetworkConnectivity = true
     private var isLoading = false
 
     abstract fun request(): Observable<Resource<T>>
@@ -32,6 +33,7 @@ abstract class BaseViewModel<T : Any?>(
             .observeOn(requestSchedulers.observe)
             .doOnSubscribe { setLoadingStatus() }
             .subscribe { handleRequest(it) }
+            .also { disposable.add(it) }
     }
 
     fun getConnectivityLiveData() = connectivity.getLiveData()
@@ -72,5 +74,11 @@ abstract class BaseViewModel<T : Any?>(
                 _responseLiveData.postValue(resource)
             }
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+
+        disposable.clear()
     }
 }
