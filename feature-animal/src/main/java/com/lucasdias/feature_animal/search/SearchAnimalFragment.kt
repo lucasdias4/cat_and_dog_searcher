@@ -54,7 +54,7 @@ class SearchAnimalFragment : Fragment(R.layout.fragment_search_animal) {
     }
 
     private fun setupSpinner() {
-        val options = listOf(RequestType.CAT.text, RequestType.DOG.text, RequestType.BOTH.text)
+        val options = listOf(RequestType.CAT.text, RequestType.DOG.text)
 
         binding.requestTypeSpinnerSearchAnimalFragment.setup(
             requireContext(),

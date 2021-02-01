@@ -15,17 +15,6 @@ class SearchAnimalByNameAndType(
         return when (requestType) {
             RequestType.CAT -> searchCatByNameRepository.fetch(name)
             RequestType.DOG -> searchDogByNameRepository.fetch(name)
-            else -> { searchCatByNameRepository.fetch(name) }
         }
     }
-// TODO: Implement merge of two requests
-
-//    private suspend fun searchBothTypesByName(name: String): Resource<List<Animal>> = coroutineScope {
-//        val resources = awaitAll(
-//            async { searchCatByNameRepository.fetch(name) },
-//            async { searchDogByNameRepository.fetch(name) }
-//        )
-//
-//        return@coroutineScope resources.mergeResources()
-//    }
 }
