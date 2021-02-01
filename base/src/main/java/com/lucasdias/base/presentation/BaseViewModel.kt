@@ -3,11 +3,13 @@ package com.lucasdias.base.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.lucasdias.core.connectivity.Connectivity
 import com.lucasdias.core.resource.Resource
 import com.lucasdias.core.scheduler.RequestSchedulers
 import io.reactivex.rxjava3.core.Observable
 
 abstract class BaseViewModel<T : Any?>(
+    private val connectivity: Connectivity,
     private val requestSchedulers: RequestSchedulers
 ) : ViewModel() {
 
@@ -20,14 +22,18 @@ abstract class BaseViewModel<T : Any?>(
     abstract fun request(): Observable<Resource<T>>
 
     fun executeRequest() {
-        if (hasNetworkConnectivity.not()) return
-        setLoadingStatus()
+        if (connectivity.isNotConnected()) {
+            setErrorStatus()
+            return
+        }
 
         request()
             .subscribeOn(requestSchedulers.subscribe)
             .observeOn(requestSchedulers.observe)
             .subscribe { handleRequest(it) }
     }
+
+    fun getConnectivityLiveData() = connectivity.getLiveData()
 
     fun isLoading() = isLoading
 
@@ -39,6 +45,10 @@ abstract class BaseViewModel<T : Any?>(
 
     private fun setLoadingStatus() {
         handleRequest(Resource.Loading())
+    }
+
+    private fun setErrorStatus() {
+        handleRequest(Resource.Error(Exception()))
     }
 
     private fun handleRequest(resource: Resource<T>) {
@@ -61,9 +71,5 @@ abstract class BaseViewModel<T : Any?>(
                 _responseLiveData.postValue(resource)
             }
         }
-    }
-
-    fun updateConnectivityStatus(hasNetworkConnectivity: Boolean) {
-        this.hasNetworkConnectivity = hasNetworkConnectivity
     }
 }

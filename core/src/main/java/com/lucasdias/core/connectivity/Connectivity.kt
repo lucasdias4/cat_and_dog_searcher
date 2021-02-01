@@ -8,14 +8,17 @@ import com.lucasdias.core.livedata.SingleLiveEvent
 class Connectivity(context: Context) {
 
     private val _liveData = SingleLiveEvent<Boolean>()
-    private var isDeviceJustStarted = true
-    private var isConnected = true
+    private var _isConnected = true
 
     init {
         registerNetworkCallback(connectivityManager = getConnectivityManager(context))
     }
 
     fun getLiveData(): SingleLiveEvent<Boolean> = _liveData
+
+    fun isConnected(): Boolean = _isConnected
+
+    fun isNotConnected(): Boolean = _isConnected.not()
 
     private fun getConnectivityManager(context: Context): ConnectivityManager {
         return context.getSystemService(Context.CONNECTIVITY_SERVICE)
@@ -31,10 +34,9 @@ class Connectivity(context: Context) {
     }
 
     private fun notifyConnectedState(isConnected: Boolean) {
-        if (this.isConnected == isConnected) return
+        if (this._isConnected == isConnected) return
 
-        this.isConnected = isConnected
-        isDeviceJustStarted = false
+        this._isConnected = isConnected
         _liveData.postValue(isConnected)
     }
 

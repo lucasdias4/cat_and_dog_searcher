@@ -9,15 +9,11 @@ import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.lucasdias.core.connectivity.Connectivity
-import com.lucasdias.core.di.CONNECTIVITY
 import com.lucasdias.extensions.animateGoneToVisible
 import com.lucasdias.extensions.animateVisibleToGone
 import com.lucasdias.extensions.showConnectivitySnackbar
 import com.lucasdias.extensions.visible
 import com.lucasdias.ui_components.error.ErrorViewComponent
-import org.koin.android.ext.android.inject
-import org.koin.core.qualifier.named
 
 abstract class BaseFragment<T : Any>(
     @IdRes private val successViewId: Int,
@@ -32,7 +28,6 @@ abstract class BaseFragment<T : Any>(
     protected lateinit var errorView: ErrorViewComponent
     protected lateinit var successView: ViewGroup
     protected var successWithoutContentView: ViewGroup? = null
-    private val connectivity by inject<Connectivity>(named(CONNECTIVITY))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -67,8 +62,7 @@ abstract class BaseFragment<T : Any>(
     }
 
     private fun setupConnectivity() {
-        connectivity.getLiveData().observe(viewLifecycleOwner, Observer { hasNetworkConnectivity ->
-            viewModel.updateConnectivityStatus(hasNetworkConnectivity)
+        viewModel.getConnectivityLiveData().observe(viewLifecycleOwner, Observer { hasNetworkConnectivity ->
             view?.showConnectivitySnackbar(hasNetworkConnectivity)
         })
     }

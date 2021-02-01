@@ -2,6 +2,7 @@ package com.lucasdias.feature_animal.list
 
 import androidx.annotation.VisibleForTesting
 import com.lucasdias.base.presentation.BaseViewModel
+import com.lucasdias.core.connectivity.Connectivity
 import com.lucasdias.core.resource.Resource
 import com.lucasdias.core.scheduler.RequestSchedulers
 import com.lucasdias.domain.enum.RequestType
@@ -11,8 +12,9 @@ import io.reactivex.rxjava3.core.Observable
 
 class AnimalListViewModel(
     private val searchAnimalByNameAndType: SearchAnimalByNameAndType,
+    connectivity: Connectivity,
     schedulers: RequestSchedulers
-) : BaseViewModel<List<Animal>>(schedulers) {
+) : BaseViewModel<List<Animal>>(connectivity, schedulers) {
 
     @VisibleForTesting internal var searchText = ""
     @VisibleForTesting internal var requestType = RequestType.CAT
