@@ -42,6 +42,9 @@ android {
 }
 
 dependencies {
+    implementation Dependencies.Core.rx_android
+    implementation Dependencies.Core.rx_java
+
     implementation Dependencies.DI.koin
     implementation Dependencies.DI.koin_core
     implementation Dependencies.DI.koin_view_model

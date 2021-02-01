@@ -3,39 +3,31 @@ package com.lucasdias.base.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.lucasdias.core.resource.Resource
-import kotlin.coroutines.CoroutineContext
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
+import com.lucasdias.core.scheduler.RequestSchedulers
+import io.reactivex.rxjava3.core.Observable
 
 abstract class BaseViewModel<T : Any?>(
-    private val coroutineContext: CoroutineDispatcher
+    private val requestSchedulers: RequestSchedulers
 ) : ViewModel() {
 
     val responseLiveData: LiveData<Resource<T>> by lazy { _responseLiveData }
+    private val _responseLiveData: MutableLiveData<Resource<T>> by lazy { MutableLiveData<Resource<T>>() }
     private var isInitialRequest = true
     private var hasNetworkConnectivity = true
-    private val _responseLiveData: MutableLiveData<Resource<T>> by lazy { MutableLiveData<Resource<T>>() }
     private var isLoading = false
 
-    abstract suspend fun request(): Resource<T>
+    abstract fun request(): Observable<Resource<T>>
 
     fun executeRequest() {
         if (hasNetworkConnectivity.not()) return
         setLoadingStatus()
 
-        launch {
-            val response = request()
-            handleRequest(response)
-        }
+        request()
+            .subscribeOn(requestSchedulers.subscribe)
+            .observeOn(requestSchedulers.observe)
+            .subscribe { handleRequest(it) }
     }
-
-    fun ViewModel.launch(
-        context: CoroutineContext = coroutineContext,
-        block: suspend CoroutineScope.() -> Unit
-    ) = viewModelScope.launch(context, block = block)
 
     fun isLoading() = isLoading
 

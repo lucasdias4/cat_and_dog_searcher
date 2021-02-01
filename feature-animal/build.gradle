@@ -57,6 +57,8 @@ dependencies {
     implementation Dependencies.Core.coroutines_core
     implementation Dependencies.Core.navigation_fragment
     implementation Dependencies.Core.navigation_ui
+    implementation Dependencies.Core.rx_android
+    implementation Dependencies.Core.rx_java
 
     implementation Dependencies.DI.koin
     implementation Dependencies.DI.koin_core

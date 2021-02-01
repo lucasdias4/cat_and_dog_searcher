@@ -28,12 +28,14 @@ object Dependencies {
 
         const val kotlin_stdlib_jdk8: String =
             "org.jetbrains.kotlin:kotlin-stdlib-jdk8:" + Versions.kotlin
+
+        const val rx_java: String =  "io.reactivex.rxjava3:rxjava:" + Versions.rx_java
+
+        const val rx_android: String =  "io.reactivex.rxjava3:rxandroid:" + Versions.rx_android
+
     }
 
     object Data {
-
-        const val converter_gson: String =
-            "com.squareup.retrofit2:converter-gson:" + Versions.retrofit
 
         const val preference: String =
             "androidx.preference:preference-ktx:" + Versions.preference
@@ -44,6 +46,10 @@ object Dependencies {
          * https://github.com/square/retrofit/
          */
         const val retrofit: String = "com.squareup.retrofit2:retrofit:" + Versions.retrofit
+
+        const val retrofit_converter_gson: String = "com.squareup.retrofit2:converter-gson:" + Versions.retrofit
+
+        const val retrofit_adapter_rx_java: String = "com.squareup.retrofit2:adapter-rxjava3:" + Versions.retrofit
     }
 
     object DI {

@@ -1,10 +1,10 @@
 package com.lucasdias.feature_animal.di
 
+import com.lucasdias.core.scheduler.RequestSchedulers
 import com.lucasdias.domain.model.Animal
 import com.lucasdias.domain.usecase.SearchAnimalByNameAndType
 import com.lucasdias.feature_animal.list.AnimalListAdapter
 import com.lucasdias.feature_animal.list.AnimalListViewModel
-import kotlinx.coroutines.CoroutineDispatcher
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -14,7 +14,7 @@ val animalModule = module {
     viewModel {
         AnimalListViewModel(
             get<SearchAnimalByNameAndType>(),
-            get<CoroutineDispatcher>()
+            get<RequestSchedulers>()
         )
     }
 

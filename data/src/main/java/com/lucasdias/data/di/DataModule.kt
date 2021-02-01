@@ -14,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 private const val CAT_RETROFIT = "CAT_RETROFIT"
@@ -71,12 +72,14 @@ private fun getDogService(retrofit: Retrofit): DogService =
 private fun createCatRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .baseUrl(CAT_API_URL)
     .client(okHttpClient)
+    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 
 private fun createDogRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
     .baseUrl(DOG_API_URL)
     .client(okHttpClient)
+    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
     .addConverterFactory(GsonConverterFactory.create())
     .build()
 

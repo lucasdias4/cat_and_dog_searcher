@@ -60,11 +60,13 @@ dependencies {
 
     implementation Dependencies.Core.kotlin_stdlib
     implementation Dependencies.Core.core_ktx
+    implementation Dependencies.Core.rx_java
 
-    implementation Dependencies.Data.converter_gson
     implementation Dependencies.Data.logging_interceptor
     implementation Dependencies.Data.preference
     implementation Dependencies.Data.retrofit
+    implementation Dependencies.Data.retrofit_adapter_rx_java
+    implementation Dependencies.Data.retrofit_converter_gson
 
     implementation Dependencies.DI.koin
     implementation Dependencies.DI.koin_core

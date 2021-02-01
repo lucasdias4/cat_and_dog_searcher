@@ -43,6 +43,7 @@ dependencies {
     implementation project(Dependencies.Module.core)
 
     implementation Dependencies.Core.kotlin_stdlib
+    implementation Dependencies.Core.rx_java
 
     implementation Dependencies.DI.koin
     implementation Dependencies.DI.koin_core

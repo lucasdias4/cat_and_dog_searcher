@@ -7,17 +7,9 @@ import com.lucasdias.data.repository.remote.model.AnimalResponse
 import com.lucasdias.domain.enum.AnimalType
 import com.lucasdias.domain.model.Animal
 
-fun Resource<List<AnimalResponse>>.toDomain(animalType: AnimalType): Resource<List<Animal>> {
-    return when (this) {
-        is Resource.Success -> this.toDomain(animalType)
-        is Resource.SuccessWithoutContent -> Resource.SuccessWithoutContent()
-        is Resource.Error -> Resource.Error(this.error())
-        is Resource.Loading -> Resource.Loading()
-    }
-}
-
-private fun Resource.Success<List<AnimalResponse>>.toDomain(animalType: AnimalType): Resource.Success<List<Animal>> {
-    return Resource.Success(this.value().map { it.toDomain(animalType) })
+fun List<AnimalResponse>?.toDomain(animalType: AnimalType): Resource<List<Animal>> {
+    return if(this.isNullOrEmpty()) Resource.SuccessWithoutContent()
+    else Resource.Success(this.map { it.toDomain(animalType) })
 }
 
 private fun AnimalResponse.toDomain(animalType: AnimalType): Animal {

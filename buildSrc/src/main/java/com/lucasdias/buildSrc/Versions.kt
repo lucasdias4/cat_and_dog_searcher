@@ -40,7 +40,9 @@ object Versions {
     const val navigation = "2.3.1"
     const val preference = "1.1.1"
     const val recycler_view = "1.1.0"
-    const val retrofit = "2.7.1"
+    const val retrofit = "2.9.0"
+    const val rx_android = "3.0.0"
+    const val rx_java = "3.0.9"
     const val runner = "1.2.0"
     const val shimmer = "0.5.0"
 }
