@@ -30,6 +30,7 @@ abstract class BaseViewModel<T : Any?>(
         request()
             .subscribeOn(requestSchedulers.subscribe)
             .observeOn(requestSchedulers.observe)
+            .doOnSubscribe { setLoadingStatus() }
             .subscribe { handleRequest(it) }
     }
 
