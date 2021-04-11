@@ -1,7 +1,7 @@
 # Cat and Dog searcher 
 
 
-## Resume 
+## Summary 
 With this application you can search for breeds of dogs, cats or both at the same time. The application uses the Dog API and the Cat API to perform the searches.
 
 ## Screens 
